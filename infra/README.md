@@ -236,7 +236,7 @@ The first component to monitor is the total CPU (per core) utilization. You shou
 
 Here is a snapshot from a dashboard with the total CPU per core usage:
 
-![](https://github.com/osvis1984/Telemetry/tree/master/infra/docs/01_cpu_total_1router.png?raw=true)
+![](https://github.com/osvis1984/Telemetry/blob/master/infra/docs/01_cpu_total_1router.png?raw=true)
 
 One second granularity is not good enough to catch the instantaneous load of the cores, but it shows that all the cores are loaded equally, and there are spikes up to ~10-11%. (in the idle mode, before the testing, all the cores were about ~1-2%)
 
@@ -263,7 +263,7 @@ exe = "pipeline"
 
 And here is a snapshot from the per-process load when there is a single active router:
 
-![](https://github.com/osvis1984/Telemetry/tree/master/infra/docs/02_cpu_per_process_1router.png?raw=true)
+![](https://github.com/osvis1984/Telemetry/blob/master/infra/docs/02_cpu_per_process_1router.png?raw=true)
 
 InfluxDB takes the most CPU power across all the monitored processes. It is roughly ~120%-140% of the load. Pipeline takes ~50%, and the load of Grafana is almost nothing comparing to the first two applications (and this confirms [the words of the developer](https://community.grafana.com/t/hardware-requirements-for-a-grafana-server/2853/2))
 This picture seems reasonable, as InfluxDB does reads, compressions, writes; hence, it takes the most power.
